@@ -8,22 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		FF77D2F427ECC92B00ADCE5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF77D2F327ECC92B00ADCE5C /* AppDelegate.swift */; };
-		FF77D2F627ECC92B00ADCE5C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF77D2F527ECC92B00ADCE5C /* SceneDelegate.swift */; };
 		FF77D2F827ECC92B00ADCE5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF77D2F727ECC92B00ADCE5C /* ViewController.swift */; };
 		FF77D2FB27ECC92B00ADCE5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF77D2F927ECC92B00ADCE5C /* Main.storyboard */; };
 		FF77D2FD27ECC93000ADCE5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF77D2FC27ECC93000ADCE5C /* Assets.xcassets */; };
 		FF77D30027ECC93000ADCE5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF77D2FE27ECC93000ADCE5C /* LaunchScreen.storyboard */; };
+		FF77D30827ECCD7200ADCE5C /* ViewController+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF77D30727ECCD7200ADCE5C /* ViewController+Extention.swift */; };
+		FF77D30A27ECCEEF00ADCE5C /* AppDelegate+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF77D30927ECCEEF00ADCE5C /* AppDelegate+Extention.swift */; };
+		FF77D31027ECD7E700ADCE5C /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF77D30F27ECD7E700ADCE5C /* SettingsTableViewCell.swift */; };
+		FF77D31227ECD85800ADCE5C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF77D31127ECD85800ADCE5C /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FF77D2F027ECC92B00ADCE5C /* iOS5-HW13-TableSettings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS5-HW13-TableSettings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF77D2F327ECC92B00ADCE5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FF77D2F527ECC92B00ADCE5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FF77D2F727ECC92B00ADCE5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FF77D2FA27ECC92B00ADCE5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF77D2FC27ECC93000ADCE5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF77D2FF27ECC93000ADCE5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF77D30127ECC93000ADCE5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF77D30727ECCD7200ADCE5C /* ViewController+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extention.swift"; sourceTree = "<group>"; };
+		FF77D30927ECCEEF00ADCE5C /* AppDelegate+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Extention.swift"; sourceTree = "<group>"; };
+		FF77D30F27ECD7E700ADCE5C /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		FF77D31127ECD85800ADCE5C /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +63,15 @@
 			isa = PBXGroup;
 			children = (
 				FF77D2F327ECC92B00ADCE5C /* AppDelegate.swift */,
-				FF77D2F527ECC92B00ADCE5C /* SceneDelegate.swift */,
 				FF77D2F727ECC92B00ADCE5C /* ViewController.swift */,
 				FF77D2F927ECC92B00ADCE5C /* Main.storyboard */,
 				FF77D2FC27ECC93000ADCE5C /* Assets.xcassets */,
 				FF77D2FE27ECC93000ADCE5C /* LaunchScreen.storyboard */,
 				FF77D30127ECC93000ADCE5C /* Info.plist */,
+				FF77D30727ECCD7200ADCE5C /* ViewController+Extention.swift */,
+				FF77D30927ECCEEF00ADCE5C /* AppDelegate+Extention.swift */,
+				FF77D30F27ECD7E700ADCE5C /* SettingsTableViewCell.swift */,
+				FF77D31127ECD85800ADCE5C /* Settings.swift */,
 			);
 			path = "iOS5-HW13-TableSettings";
 			sourceTree = "<group>";
@@ -138,9 +147,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF77D31227ECD85800ADCE5C /* Settings.swift in Sources */,
 				FF77D2F827ECC92B00ADCE5C /* ViewController.swift in Sources */,
 				FF77D2F427ECC92B00ADCE5C /* AppDelegate.swift in Sources */,
-				FF77D2F627ECC92B00ADCE5C /* SceneDelegate.swift in Sources */,
+				FF77D30827ECCD7200ADCE5C /* ViewController+Extention.swift in Sources */,
+				FF77D31027ECD7E700ADCE5C /* SettingsTableViewCell.swift in Sources */,
+				FF77D30A27ECCEEF00ADCE5C /* AppDelegate+Extention.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
