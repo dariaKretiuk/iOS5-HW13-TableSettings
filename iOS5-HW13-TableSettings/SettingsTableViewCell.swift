@@ -11,16 +11,17 @@ class SettingsTableViewCell: UITableViewCell {
     
     let settingImageView:UIImageView = {
         let img = UIImageView()
-        img.contentMode = .scaleAspectFill
+        img.contentMode = .scaleAspectFit
         img.translatesAutoresizingMaskIntoConstraints = false
-        img.layer.cornerRadius = 35
+        img.layer.cornerRadius = 5
+        img.tintColor = .white
         img.clipsToBounds = true
         return img
     }()
     
     var nameSetting:UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.systemFont(ofSize: 20)
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -42,18 +43,18 @@ class SettingsTableViewCell: UITableViewCell {
         
         settingImageView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
         settingImageView.leadingAnchor.constraint(equalTo:self.contentView.leadingAnchor, constant:10).isActive = true
-        settingImageView.widthAnchor.constraint(equalToConstant:50).isActive = true
-        settingImageView.heightAnchor.constraint(equalToConstant:50).isActive = true
+        settingImageView.widthAnchor.constraint(equalToConstant:30).isActive = true
+        settingImageView.heightAnchor.constraint(equalToConstant:30).isActive = true
         
         containerView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
-        containerView.leadingAnchor.constraint(equalTo:self.settingImageView.trailingAnchor, constant:10).isActive = true
+        containerView.leadingAnchor.constraint(equalTo:self.settingImageView.trailingAnchor, constant:15).isActive = true
         containerView.trailingAnchor.constraint(equalTo:self.contentView.trailingAnchor, constant:-10).isActive = true
         containerView.heightAnchor.constraint(equalToConstant:40).isActive = true
         
-        nameSetting.topAnchor.constraint(equalTo:self.containerView.topAnchor).isActive = true
+//        nameSetting.centerYAnchor.constraint(equalTo: self.containerView.centerXAnchor).isActive = true
+        nameSetting.topAnchor.constraint(equalTo:self.containerView.topAnchor, constant: 8).isActive = true
         nameSetting.leadingAnchor.constraint(equalTo:self.containerView.leadingAnchor).isActive = true
         nameSetting.trailingAnchor.constraint(equalTo:self.containerView.trailingAnchor).isActive = true
-    
     }
     
     required init?(coder aDecoder: NSCoder) {

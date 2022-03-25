@@ -12,4 +12,5 @@ struct Settings {
     let nameImage: String
     let name: String
     let additionalInfo: String?
+    let backgroundColor: UIColor
 }
