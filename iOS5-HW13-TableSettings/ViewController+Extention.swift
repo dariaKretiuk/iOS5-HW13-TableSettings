@@ -11,10 +11,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     static let dataSettings = [[Settings(nameImage: "airplane", name: "Авиарежим", additionalInfo: "switch", backgroundColor: .orange),
                        Settings(nameImage: "wifi", name: "Wi-Fi", additionalInfo: "label:WiFi", backgroundColor: .blue),
-                       Settings(nameImage: "wave.3.right", name: "Bluetooth", additionalInfo: "label:Вкл.", backgroundColor: .blue),
+                       Settings(nameImage: "bluetooth.white.2", name: "Bluetooth", additionalInfo: "label:Вкл.", backgroundColor: .blue),
                        Settings(nameImage: "antenna.radiowaves.left.and.right", name: "Сотовая связь", additionalInfo: nil, backgroundColor: .green),
                        Settings(nameImage: "personalhotspot", name: "Режим модема", additionalInfo: nil, backgroundColor: .green),
-//                       Settings(nameImage: "", name: "VPN", additionalInfo: "label", backgroundColor: .blue)
+                       Settings(nameImage: "vpn.white", name: "VPN", additionalInfo: "switch", backgroundColor: .blue)
                                 ],
                        [Settings(nameImage: "bell.badge.fill", name: "Уведомления", additionalInfo: nil, backgroundColor: .red),
                        Settings(nameImage: "speaker.wave.3.fill", name: "Звуки и тактильные сигналы", additionalInfo: nil, backgroundColor: .systemPink),
@@ -24,6 +24,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
                        [Settings(nameImage: "gear", name: "Основное", additionalInfo: "image:1.circle.fill", backgroundColor: .gray),
                        Settings(nameImage: "switch.2", name: "Пункт управления", additionalInfo: nil, backgroundColor: .gray),
                        Settings(nameImage: "textformat.size", name: "Экран и яркость", additionalInfo: nil, backgroundColor: .blue),
+                        Settings(nameImage: "square.grid.3x3", name: "Экран \"Домой\"", additionalInfo: nil, backgroundColor: .blue),
                        Settings(nameImage: "figure.walk.circle", name: "Универсальный доступ", additionalInfo: nil, backgroundColor: .blue)
                         ]
     ]
@@ -45,11 +46,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "settingsCell", for: indexPath) as! SettingsTableViewCell
-        cell.nameSetting.text = ViewController.dataSettings[indexPath.section][indexPath.row].name
-        cell.settingImageView.image = UIImage(systemName: ViewController.dataSettings[indexPath.section][indexPath.row].nameImage)
-        cell.settingImageView.backgroundColor = ViewController.dataSettings[indexPath.section][indexPath.row].backgroundColor
+        let setting = ViewController.dataSettings[indexPath.section][indexPath.row]
+        cell.nameSetting.text = setting.name
         
-        if let additionalInfo = ViewController.dataSettings[indexPath.section][indexPath.row].additionalInfo {
+        if setting.name == "Bluetooth" || setting.name == "VPN"{
+            cell.settingImageView.image = UIImage(named: setting.nameImage)
+        } else {
+            cell.settingImageView.image = UIImage(systemName: setting.nameImage)
+        }
+        cell.settingImageView.backgroundColor = setting.backgroundColor
+        
+        if let additionalInfo = setting.additionalInfo {
             let additionalInfoSplit = additionalInfo.components(separatedBy: ":")
             switch additionalInfoSplit[0] {
             case "label":
@@ -79,11 +86,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
                 ])
             case "switch":
                 let switchView = UISwitch()
-//                switchView.setOn(false, animated: true)
+                switchView.translatesAutoresizingMaskIntoConstraints = false
                 cell.addSubview(switchView)
                 NSLayoutConstraint.activate([
-                    switchView.topAnchor.constraint(equalTo: cell.topAnchor, constant: 10),
-                    switchView.centerXAnchor.constraint(equalTo: cell.centerXAnchor, constant: -40)
+                    switchView.centerYAnchor.constraint(equalTo: cell.centerYAnchor),
+                    switchView.rightAnchor.constraint(equalTo: cell.rightAnchor, constant: -40),
                 ])
             default:
                 ""

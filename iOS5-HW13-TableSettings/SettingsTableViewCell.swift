@@ -11,11 +11,10 @@ class SettingsTableViewCell: UITableViewCell {
     
     let settingImageView:UIImageView = {
         let img = UIImageView()
-        img.contentMode = .scaleAspectFit
+        img.contentMode = .center
         img.translatesAutoresizingMaskIntoConstraints = false
-        img.layer.cornerRadius = 5
+        img.layer.cornerRadius = 10
         img.tintColor = .white
-        img.clipsToBounds = true
         return img
     }()
     
@@ -43,8 +42,8 @@ class SettingsTableViewCell: UITableViewCell {
         
         settingImageView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
         settingImageView.leadingAnchor.constraint(equalTo:self.contentView.leadingAnchor, constant:10).isActive = true
-        settingImageView.widthAnchor.constraint(equalToConstant:30).isActive = true
-        settingImageView.heightAnchor.constraint(equalToConstant:30).isActive = true
+        settingImageView.widthAnchor.constraint(equalToConstant:35).isActive = true
+        settingImageView.heightAnchor.constraint(equalToConstant:35).isActive = true
         
         containerView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
         containerView.leadingAnchor.constraint(equalTo:self.settingImageView.trailingAnchor, constant:15).isActive = true
